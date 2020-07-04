@@ -19,6 +19,7 @@ public class three extends Application{
         button = new Button(); //instantiates nwe button
         button.setText("This is button Text");//gives it text
 
+        button.setOnAction(e -> System.out.println("Hey now you're an all star"));
 
         StackPane layout = new StackPane(); //makes a layout
         layout.getChildren().add(button);//adds the button to the layout
