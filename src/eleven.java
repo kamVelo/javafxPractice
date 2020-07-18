@@ -14,7 +14,7 @@ public class eleven extends Application{
     public static void main(String[] args){
         launch(args);
     }
-
+    @Override
     public void start(Stage primaryStage){
         window = primaryStage;
         window.setTitle("kamVelo's meat hogies");
