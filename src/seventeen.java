@@ -91,6 +91,7 @@ public class seventeen extends Application{
     public void addButtonClicked(){
         product prod = new product();
         prod.setName(nameInput.getText());
+
         prod.setPrice(Double.parseDouble(priceInput.getText()));
         prod.setQuantity(Integer.parseInt(quantityInput.getText()));
         table.getItems().add(prod);
