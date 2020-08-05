@@ -41,9 +41,25 @@ public class twentyOne extends Application{
         editMenu.getItems().addAll(new MenuItem("cut"), new MenuItem("copy"),paste);
 
 
+        //help menu
+        Menu helpMenu = new Menu("helpMenu");
+        CheckMenuItem showLines = new CheckMenuItem("show line numbers");
+        showLines.setOnAction(e->{
+            if(showLines.isSelected()) System.out.println("Showing line numbers");
+            else System.out.println("hiding line numbers");
+        });
+        CheckMenuItem autoSave = new CheckMenuItem("auto save");
+        autoSave.setSelected(true);
+        autoSave.setOnAction(e->{
+            if(autoSave.isSelected())System.out.println("auto save is on");
+            else System.out.println("auto save is off");
+        });
+
+        helpMenu.getItems().addAll(showLines,autoSave);
+
         //main menu bar
         MenuBar menuBar = new MenuBar();
-        menuBar.getMenus().addAll(file,editMenu);
+        menuBar.getMenus().addAll(file,editMenu, helpMenu);
         BorderPane layout = new BorderPane();
         layout.setTop(menuBar);
 
