@@ -24,13 +24,26 @@ public class twentyOne extends Application{
         Menu file = new Menu("file");
 
         //file menu items
-        file.getItems().add( new MenuItem("new project..."));
-        file.getItems().add( new MenuItem("new module..."));
-        file.getItems().add( new MenuItem("import project..."));
+        MenuItem newFile = new MenuItem("new file...");
+        newFile.setOnAction(e-> System.out.println("new file"));
+        file.getItems().add(newFile);
+        file.getItems().add( new MenuItem("open..."));
+        file.getItems().add( new MenuItem("save..."));
+        file.getItems().add(new SeparatorMenuItem());
+        file.getItems().add( new MenuItem("settings..."));
+        file.getItems().add(new SeparatorMenuItem());
+        file.getItems().add( new MenuItem("exit"));
+
+        //edit menu
+        Menu editMenu = new Menu("_edit");
+        MenuItem paste = new MenuItem("Paste");
+        paste.setDisable(true);
+        editMenu.getItems().addAll(new MenuItem("cut"), new MenuItem("copy"),paste);
+
 
         //main menu bar
         MenuBar menuBar = new MenuBar();
-        menuBar.getMenus().addAll(file);
+        menuBar.getMenus().addAll(file,editMenu);
         BorderPane layout = new BorderPane();
         layout.setTop(menuBar);
 
