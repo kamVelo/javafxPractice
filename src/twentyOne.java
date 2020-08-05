@@ -57,9 +57,21 @@ public class twentyOne extends Application{
 
         helpMenu.getItems().addAll(showLines,autoSave);
 
+
+        //difficulty menu
+        Menu difMenu = new Menu("difficulty");
+        ToggleGroup group = new ToggleGroup();
+        RadioMenuItem easy = new RadioMenuItem("easy");
+        RadioMenuItem medium = new RadioMenuItem("medium");
+        RadioMenuItem hard = new RadioMenuItem("hard");
+        easy.setToggleGroup(group);
+        medium.setToggleGroup(group);
+        hard.setToggleGroup(group);
+        difMenu.getItems().addAll(easy,medium,hard);
+
         //main menu bar
         MenuBar menuBar = new MenuBar();
-        menuBar.getMenus().addAll(file,editMenu, helpMenu);
+        menuBar.getMenus().addAll(file,editMenu, helpMenu,difMenu);
         BorderPane layout = new BorderPane();
         layout.setTop(menuBar);
 
