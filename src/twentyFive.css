@@ -1,0 +1,22 @@
+.root{
+    -fx-background-color:#000000;
+    -fx-font-size:10pt;
+}
+.label{
+    -fx-text-color:#fff;
+}
+.button{
+    -fx-background-color:linear-gradient(#dc9656, #ab4642);
+    -fx-text-fill:#fff;
+    -fx-background-radius:6;
+}
+
+.button-blue{
+    -fx-background-color:#0000FF;
+    -fx-text-fill:#fff;
+    -fx-background-radius:6;
+}
+
+#uniButton{
+    -fx-font-weight:bold;
+}

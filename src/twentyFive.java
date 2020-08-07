@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-public class nine extends Application{
+public class twentyFive extends Application{
     Stage window;
     public static void main(String[] args){
         launch(args);
@@ -32,6 +32,7 @@ public class nine extends Application{
         //name label
 
         Label name = new Label("Username");
+        name.setStyle(";");
         GridPane.setConstraints(name, 0, 0);
 
         //name input
@@ -51,10 +52,17 @@ public class nine extends Application{
 
         Button logBtn = new Button("Log In");
 
+        Button signupButton = new Button("sign up");
+        signupButton.getStyleClass().add("button-blue");
+        signupButton.setId("uniButton");
+        GridPane.setConstraints(signupButton,1,3);
+
+
         GridPane.setConstraints(logBtn,1,2);
-        grid.getChildren().addAll(name, nameInput,passInput,passLabel,logBtn);
+        grid.getChildren().addAll(name, nameInput,passInput,passLabel,logBtn,signupButton);
 
         Scene scene = new Scene(grid, 300,250);
+        scene.getStylesheets().add("./twentyFive.css");
         window.setScene(scene);
 
         window.show();
